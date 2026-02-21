@@ -7,15 +7,18 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Use Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -27,13 +30,6 @@ jobs:
         shell: bash
         run: |
           echo "${{ secrets.AUTH_JSON_GZ_B64 }}" | base64 --decode | gunzip > auth.json
-          node -e "console.log('auth.json bytes:', require('fs').statSync('auth.json').size)"
-
-      - name: Recreate auth.json from gzipped secret
-        shell: bash
-        run: |
-          echo "${{ secrets.AUTH_JSON_GZ_B64 }}" | base64 --decode | gunzip > auth.json
-          node -e "console.log('auth.json bytes:', require('fs').statSync('auth.json').size)"
 
       - name: Run Fantrax counts
         run: node roster_counts.cjs
@@ -44,10 +40,19 @@ jobs:
       - name: Build static site
         run: node build_dashboard.mjs
 
-      - name: Commit updated outputs
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add roster_counts.json picks_2026_milb_report.json public/index.html public/data.json
-          git commit -m "update dashboard" || echo "No changes"
-          git push
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
