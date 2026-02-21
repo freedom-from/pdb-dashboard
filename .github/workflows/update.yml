@@ -23,9 +23,11 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Write auth.json from secret
+      - name: Recreate auth.json from gzipped secret
+        shell: bash
         run: |
-          echo "${{ secrets.FANTRAX_AUTH_JSON }}" > auth.json
+          echo "${{ secrets.AUTH_JSON_GZ_B64 }}" | base64 --decode | gunzip > auth.json
+          node -e "console.log('auth.json bytes:', require('fs').statSync('auth.json').size)"
 
       - name: Recreate auth.json from gzipped secret
         shell: bash
