@@ -1,0 +1,45 @@
+name: Update dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Write auth.json from secret
+        run: |
+          echo "${{ secrets.FANTRAX_AUTH_JSON }}" > auth.json
+
+      - name: Run Fantrax counts
+        run: node roster_counts.js
+
+      - name: Run pick requirements join
+        run: node picks_2026_milb.mjs
+
+      - name: Build static site
+        run: node build_dashboard.mjs
+
+      - name: Commit updated outputs
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add roster_counts.json picks_2026_milb_report.json public/index.html public/data.json
+          git commit -m "update dashboard" || echo "No changes"
+          git push
