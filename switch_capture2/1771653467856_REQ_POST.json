@@ -1,0 +1,15 @@
+{
+  "ts": 1771653467856,
+  "method": "POST",
+  "url": "https://www.fantrax.com/fxpa/req?leagueId=71wm5vfrmg5kp4my",
+  "headers": {
+    "sec-ch-ua-platform": "\"macOS\"",
+    "referer": "https://www.fantrax.com/fantasy/league/71wm5vfrmg5kp4my/team/roster",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "accept": "application/json",
+    "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+    "content-type": "text/plain",
+    "sec-ch-ua-mobile": "?0"
+  },
+  "postData": "{\"msgs\":[{\"method\":\"getFantasyLeagueInfo\",\"data\":{}}],\"uiv\":3,\"refUrl\":\"https://www.fantrax.com/fantasy/league/71wm5vfrmg5kp4my/team/roster\",\"dt\":0,\"at\":0,\"av\":\"0.0\",\"tz\":\"America/Chicago\",\"v\":\"179.0.1\"}"
+}

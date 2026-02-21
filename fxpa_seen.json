@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://www.fantrax.com/fxpa/req?leagueId=71wm5vfrmg5kp4my",
+    "method": "POST",
+    "status": 200
+  },
+  {
+    "url": "https://www.fantrax.com/fxpa/req",
+    "method": "POST",
+    "status": 200
+  },
+  {
+    "url": "https://www.fantrax.com/fxpa/req",
+    "method": "POST",
+    "status": 200
+  },
+  {
+    "url": "https://www.fantrax.com/fxpa/req?leagueId=71wm5vfrmg5kp4my",
+    "method": "POST",
+    "status": 200
+  }
+]

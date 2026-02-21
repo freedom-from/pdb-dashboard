@@ -1,0 +1,23 @@
+[
+  {
+    "i": 0,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://www.fantrax.com/fxpa/req?leagueId=71wm5vfrmg5kp4my",
+    "file": "000_www.fantrax.com_fxpa_req_leagueId_71wm5vfrmg5kp4my.json"
+  },
+  {
+    "i": 1,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://www.fantrax.com/fxpa/req",
+    "file": "001_www.fantrax.com_fxpa_req.json"
+  },
+  {
+    "i": 2,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gda&tv=r20260218&st=env&sjk=6966358185556100",
+    "file": "002_ep1.adtrafficquality.google_getconfig_sodar_sv_200_tid_gda_tv_r20260218_st_env_sjk_6966358185556100.json"
+  }
+]

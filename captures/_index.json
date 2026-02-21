@@ -1,0 +1,345 @@
+[
+  {
+    "i": 0,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gda&tv=r20260218&st=env&sjk=6366712034670542",
+    "file": "000_ep1.adtrafficquality.google_getconfig_sodar_sv_200_tid_gda_tv_r20260218_st_env_sjk_6366712034670542.json"
+  },
+  {
+    "i": 1,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://www.fantrax.com/fxpa/req?leagueId=71wm5vfrmg5kp4my",
+    "file": "001_www.fantrax.com_fxpa_req_leagueId_71wm5vfrmg5kp4my.json"
+  },
+  {
+    "i": 2,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://www.fantrax.com/fxpa/req",
+    "file": "002_www.fantrax.com_fxpa_req.json"
+  },
+  {
+    "i": 3,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://d.pub.network/v2/sites/fantrax-com/configs?env=PROD",
+    "file": "003_d.pub.network_v2_sites_fantrax-com_configs_env_PROD.json"
+  },
+  {
+    "i": 4,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://optimise.net/?k=0&d=fantrax.com&t=desktop&c=US&r=20",
+    "file": "004_optimise.net_k_0_d_fantrax.com_t_desktop_c_US_r_20.json"
+  },
+  {
+    "i": 5,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://pagead2.googlesyndication.com/getconfig/sodar?tid=pal&tv=1.0",
+    "file": "005_pagead2.googlesyndication.com_getconfig_sodar_tid_pal_tv_1.0.json"
+  },
+  {
+    "i": 6,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://live.primis.tech/live/liveView.php?hash=pm01ODA1NlZ2nWRsqzFmqFRcoWViqXQ9LTEzqzyxX3Zup3RUrXByPTMzqzyxX3BfYXyypyZypw0mLwEhMCZ2nWRsqzyyq2FvnWkcqHyTqGF0ZT0jJaZcZF9wo250ZW50X3VloD1bqHRjplUmQSUlRvUlRaZcZGViLaBlnW1cpl50ZWNbJTJGqXBfo2FxplUlRzNhMSUlRaZcZGViJTJGqXNypaMyMxZwo252ZXJ0ZWQyMxYlOTt3NCUlRaZcZGViXmY4OWRvMzM3NDUjNmp4MwE3MTtjODYyMxZ2nWQ2OTx5MDY3MDyxMwp3NTU0Nmp5MwQ3Lz1jNCUmRaRinlUmRGV3o2qJQ0FaSW1Gp1c5STZJQ0cJVXcJMU5cSXNDnUFaSUNBnWRIoHqJnz9aSWgjWFZDSUgzUS5yq29aSUNBZ0ygoHcwrUx2SUNKUWNgoHRuWE1cTEFiZ0yDQWqJox4kWWyJNxyDSXZxWEJmYwJGn2N5OWcvnxV2ZG1fn1cXOHZxWE5fY25NqyxlOXVxoVZ5ZEqWn0k6STVPRGMjTDNnpFcHVaZYryx0T1qSnU1gTTNORFV3TacwNE1dRTNNVGq3T0RZqzRgoGgOnzf1T1RBMx56QTVnRExmTacVMU5EYmNPVExjTax1qGNEUWyMQW9aSUNBZ0ygNWynnUx2SURFM056RTJNnyE0TURBp0NcQWqJQ0FcWyubq0ydo2qNVGMmTVRarU1UWTJNQXA5Lwy0qS1cqzNyRS15Wz42o0VRUFRaWxkfM0ZRQ0qmqTyNWWRzZDFHnxygOWMzqzyxX2NioaRyoaRsnWQ9OTE3NmQkMvZ2nWRsY29hqGVhqF9xZXNwPVyuozgyZXMepGy0Y2ucozpepHJip3ByY3QeRWkgZXIeUz9xpzyaqWV6K2ygpHJyp3NyplgcovgmpHJcozpeqHJunW5cozpeo3ByozVlJaZcZF9wo250ZW50X3RcqGkyPVyuozgyZXMepGy0Y2ucozpepHJip3ByY3QeRWkgZXIeUz9xpzyaqWV6K2ygpHJyp3NyplgcovgmpHJcozpeqHJunW5cozpeo3ByozVlJaZcZF9wo250ZW50X2R1pzF0nW9hPTElMCZjoGFwZW1yoaRTqHJyYW1UrXByPTEzZGVvqWqJozZipz1uqGyiow0zpGkurWkcp3RJZD0kNTIkNvZjoGF5ZXJJoaN0YW5wZUyxPTE4MDA1ODUjMmQ0MmtkODxmOTIzrD0mMDAzrT0kNwxzpHVvVXJfPWu0qHBmJTNBJTJGJTJGq3q3LzZuoaRlYXthY29gJTJGZzFhqGFmrSUlRzkyYWq1ZSUlRwpkq201qzZloWp1n3A0oXxyMxZ0ZWFgJTJGY2uupaQzpzx9NxM2OTp2NwU1Mmp0NwE3NDpmN0M3MmZCMmE3QwU0MmA3RDqCNwQmMwMjMmImNwJEMmAmMwJEMmImMTVGMmAmNTqEN0I3MmMkMmpmMwM2MmAmMDM0Mmt3RDqCNDMmMmMjN0Q3QwUmNwQmMmY0MmM0QmZENUE2ODYlNxU1Mwp5NTx1ODY3NmU1OTMlMmx3NDqEN0I2MwYmNwt3MwZGNxQ2NTqEN0I3MTY0NwU3MmZCNmQ2RwpjN0Q3QwZGNxQ2MTYmNxY3Mmp4N0Q3QwU4MmMmMDMjN0Q3QwU5MmEmNwM5N0Q3QwY2MmE3RDqCNEMmMTM5MmpmNTM0N0RGRUZFJzFjpE5uoWU9JzymQXBjPTAzYXBjSWQ9JzRcYWyxPSZupHBCqW5xoGVJZD1bqHRjplUmQSUlRvUlRaq3ql5zYW50pzF4LzNioSUlRzZuoaRup3xyMxZfZWFaqWUyMxY3MXqgNXZzpz1aNWgjNG15JTJGqGVuoSUlRzNbYXJ0JzFjpFN0o3JyVXJfPSZupHBQpzy2YWN5UG9fnWN5PSZupHBJp1BunWQ9JzFjpFZypaNco249JaNxn3Y9JzFjpERyqzVfo3Bypw0zZ2ViTGF0nT00Nl42MTA5Jzqyo0kiozp9LTElMv4mMmAmJzN1ZGx9pGyjLU13RWkMq0VdTXY0ME52NDBOnvUmRCUmRCZ1p2VlVUE9TW96nWkfYSUlRwUhMCfyMwuNYWNcoaRip2tyM0IeSW50ZWjeTWFwK09TK1teMTBsMTVsNlUlOSgBpHBfZVqyYxgcqCUlRwUmNl4mNvfyMwuLSFRNTCUlQlgfnWgyK0qyY2giJTI5K0uyYWRfZXNmQ2ulo21yJTJGMTQ1LwAhNmYmMv42K1NuZzFlnSUlRwUmNl4mNvZmY2uunW49MS4jJTJDMSUlMWZlZWVmqGFlLzNioSUlQmElMDMyMxMkJaBfYXyypxFjnUyxPSZuqzFcoENuoXBunWqhpm0znXNBpHBKpm0jJzNmqXVcZD02OTx5MwJyNwEmNwyxJzNvqXN0ZXI9MTp3MTY0MmYlMmM5MQ==",
+    "file": "006_live.primis.tech_live_liveView.php_hash_pm01ODA1NlZ2nWRsqzFmqFRcoWViqXQ9LTEzqzyxX3Zup3RUrXByPTMzqzyxX3BfYXyypyZypw0mLwEhMCZ2nWRsqzyyq2FvnWkcqHyTqGF0ZT0jJaZcZF9wo250ZW50X3VloD1bqHRj.json"
+  },
+  {
+    "i": 7,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://live.primis.tech/live/liveView.php?hash=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",
+    "file": "007_live.primis.tech_live_liveView.php_hash_pm01ODA1NlZ2nWRsqzFmqFRcoWViqXQ9LTEzqzyxX3Zup3RUrXByPTMzqzyxX3BfYXyypyZypw0mLwEhMCZ2nWRsqzyyq2FvnWkcqHyTqGF0ZT0jJaZcZF9wo250ZW50X3VloD1bqHRj.json"
+  },
+  {
+    "i": 8,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://live.primis.tech/live/liveView.php?hash=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",
+    "file": "008_live.primis.tech_live_liveView.php_hash_pm01ODA1NlZ2nWRsqzFmqFRcoWViqXQ9LTEzqzyxX3Zup3RUrXByPTMzqzyxX3BfYXyypyZypw0mLwEhMCZ2nWRsqzyyq2FvnWkcqHyTqGF0ZT0kJaZcZF9wo250ZW50X3VloD1bqHRj.json"
+  },
+  {
+    "i": 9,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://live.primis.tech/live/liveView.php?hash=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",
+    "file": "009_live.primis.tech_live_liveView.php_hash_pm01ODA1NlZ2nWRsqzFmqFRcoWViqXQ9LTEzqzyxX3Zup3RUrXByPTMzqzyxX3BfYXyypyZypw0mLwEhMCZ2nWRsqzyyq2FvnWkcqHyTqGF0ZT0kJaZcZF9wo250ZW50X3VloD1bqHRj.json"
+  },
+  {
+    "i": 10,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://live.primis.tech/live/liveView.php?hash=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",
+    "file": "010_live.primis.tech_live_liveView.php_hash_pm01ODA1NlZ2nWRsqzFmqFRcoWViqXQ9LTEzqzyxX3Zup3RUrXByPTMzqzyxX3BfYXyypyZypw0mLwEhMCZ2nWRsqzyyq2FvnWkcqHyTqGF0ZT0kJaZcZF9wo250ZW50X3VloD1bqHRj.json"
+  },
+  {
+    "i": 11,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://live.primis.tech/live/liveView.php?hash=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",
+    "file": "011_live.primis.tech_live_liveView.php_hash_pm01ODA1NlZ2nWRsqzFmqFRcoWViqXQ9LTEzqzyxX3Zup3RUrXByPTMzqzyxX3BfYXyypyZypw0mLwEhMCZ2nWRsqzyyq2FvnWkcqHyTqGF0ZT0kJaZcZF9wo250ZW50X3VloD1bqHRj.json"
+  },
+  {
+    "i": 12,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://match.adsrvr.org/track/rid?ttd_pid=j6w8ta9&fmt=json",
+    "file": "012_match.adsrvr.org_track_rid_ttd_pid_j6w8ta9_fmt_json.json"
+  },
+  {
+    "i": 13,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://pubads.g.doubleclick.net/adsid/integrator.json?aos=https%3A%2F%2Fwww.fantrax.com%2Chttps%3A%2F%2Fwww.fantrax.com",
+    "file": "013_pubads.g.doubleclick.net_adsid_integrator.json_aos_https_3A_2F_2Fwww.fantrax.com_2Chttps_3A_2F_2Fwww.fantrax.com.json"
+  },
+  {
+    "i": 14,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://ut.pubmatic.com/geo?pubid=159196",
+    "file": "014_ut.pubmatic.com_geo_pubid_159196.json"
+  },
+  {
+    "i": 15,
+    "status": 200,
+    "contentType": "application/json;charset=utf-8",
+    "url": "https://c.amazon-adsystem.com/cdn/prod/config?src=600&u=https%3A%2F%2Fwww.fantrax.com&pubid=0ab198dd-b265-462a-ae36-74e163ad6159",
+    "file": "015_c.amazon-adsystem.com_cdn_prod_config_src_600_u_https_3A_2F_2Fwww.fantrax.com_pubid_0ab198dd-b265-462a-ae36-74e163ad6159.json"
+  },
+  {
+    "i": 16,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://gum.criteo.com/sid/json?origin=prebid&topUrl=https%3A%2F%2Fwww.fantrax.com%2F&domain=www.fantrax.com&bundle=xJsCtF9jeW9jNThBZzladzRGN0VEdmpuc2piQkhVT3dNNzIwYWhROFpDWGZFVzRGcFdKbWg0a3o5VG02SGhFeWZ4WWtjN1pGVko3NFh6VGNoaEpPbXZGZVVHR0tFRUoySGolMkZUcW5DT3hPSjNmOVlvMG40VTl2THUlMkJWVFhVenQlMkJvTlJ4cA&cw=1&lsw=1",
+    "file": "016_gum.criteo.com_sid_json_origin_prebid_topUrl_https_3A_2F_2Fwww.fantrax.com_2F_domain_www.fantrax.com_bundle_xJsCtF9jeW9jNThBZzladzRGN0VEdmpuc2piQkhVT3dNNzIwYWhROFpDWGZFVzRGcFdKbWg0.json"
+  },
+  {
+    "i": 17,
+    "status": 200,
+    "contentType": "application/json;charset=utf-8",
+    "url": "https://id5-sync.com/api/config/prebid",
+    "file": "017_id5-sync.com_api_config_prebid.json"
+  },
+  {
+    "i": 18,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://na.edge.optable.co/config?osdk=web-v0.45.0&sid=OGIYUO1QSN_t-6SeD7w6_Q&t=analytics&o=analytics&ro=true&cookies=no&passport=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6M3NQSlpzVXpqbk9KY3c1UGVyRFE0OCIsIm5ldyI6dHJ1ZSwiZXhwIjoxNzc0MjM1NTA2fQ.fwSHaVnjaKxB94TnB1o_GhkeVTHvqC1I-YdERKebt-KftSWmkSjgqMAtQLEh41EMoE40sCuP5hY5jk5CmDYPnA",
+    "file": "018_na.edge.optable.co_config_osdk_web-v0.45.0_sid_OGIYUO1QSN_t-6SeD7w6_Q_t_analytics_o_analytics_ro_true_cookies_no_passport_eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6M3NQSlpzV.json"
+  },
+  {
+    "i": 19,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://na.edge.optable.co/config?osdk=web-v0.45.0&sid=oNu8d9Cb1IlRbosLS5zLVg&t=freestar-auth&o=fantrax-com&cookies=no&passport=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6MTR0S1VZV0R4bjJUalk4Rjd4V3ZsNiIsIm5ldyI6ZmFsc2UsImV4cCI6MTc3NDIzNTUwN30.S65F-JZu76vOBIDl21n2dcmLSUHJXtIfoAEIvetJYEGUSzHFcSnQaTuzaJGBulLJnIzW3LtcGMaVmqyEEsMigQ",
+    "file": "019_na.edge.optable.co_config_osdk_web-v0.45.0_sid_oNu8d9Cb1IlRbosLS5zLVg_t_freestar-auth_o_fantrax-com_cookies_no_passport_eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6MTR0S1VZV0R.json"
+  },
+  {
+    "i": 20,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://na.edge.optable.co/witness?osdk=web-v0.45.0&sid=D6ExoNsV1NOnehr07ze6jg&t=freestar-auth&o=fantrax-com&cookies=no&passport=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6MTR0S1VZV0R4bjJUalk4Rjd4V3ZsNiIsIm5ldyI6ZmFsc2UsImV4cCI6MTc3NDIzNTUwN30.S65F-JZu76vOBIDl21n2dcmLSUHJXtIfoAEIvetJYEGUSzHFcSnQaTuzaJGBulLJnIzW3LtcGMaVmqyEEsMigQ",
+    "file": "020_na.edge.optable.co_witness_osdk_web-v0.45.0_sid_D6ExoNsV1NOnehr07ze6jg_t_freestar-auth_o_fantrax-com_cookies_no_passport_eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6MTR0S1VZV0.json"
+  },
+  {
+    "i": 21,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://na.edge.optable.co/v2/targeting?id=__passport__&ab_test_id=all&osdk=web-v0.45.0&sid=oNu8d9Cb1IlRbosLS5zLVg&t=freestar-auth&o=fantrax-com&cookies=no&passport=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6MTR0S1VZV0R4bjJUalk4Rjd4V3ZsNiIsIm5ldyI6ZmFsc2UsImV4cCI6MTc3NDIzNTYyNH0.BpNC_pvY7IBdpIrtonHi_uGNkMEj-sOUputUhoifu6UHR5l6wBUc-aNKxMgp80SKo9u3Rkan2z8zL-fDNvx6KQ",
+    "file": "021_na.edge.optable.co_v2_targeting_id___passport___ab_test_id_all_osdk_web-v0.45.0_sid_oNu8d9Cb1IlRbosLS5zLVg_t_freestar-auth_o_fantrax-com_cookies_no_passport_eyJhbGciOiJFUzI1NiIsInR.json"
+  },
+  {
+    "i": 22,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://prebid-server.rubiconproject.com/openrtb2/auction",
+    "file": "022_prebid-server.rubiconproject.com_openrtb2_auction.json"
+  },
+  {
+    "i": 23,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://direct.adsrvr.org/bid/bidder/freestar",
+    "file": "023_direct.adsrvr.org_bid_bidder_freestar.json"
+  },
+  {
+    "i": 24,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://match.adsrvr.org/track/rid?ttd_pid=6bjin1p&fmt=json",
+    "file": "024_match.adsrvr.org_track_rid_ttd_pid_6bjin1p_fmt_json.json"
+  },
+  {
+    "i": 25,
+    "status": 200,
+    "contentType": "application/json;charset=utf-8",
+    "url": "https://lb.eu-1-id5-sync.com/lb/v1",
+    "file": "025_lb.eu-1-id5-sync.com_lb_v1.json"
+  },
+  {
+    "i": 26,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://na.edge.optable.co/identify?osdk=web-v0.45.0&sid=oNu8d9Cb1IlRbosLS5zLVg&t=freestar-auth&o=fantrax-com&cookies=no&passport=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6MTR0S1VZV0R4bjJUalk4Rjd4V3ZsNiIsIm5ldyI6ZmFsc2UsImV4cCI6MTc3NDIzNTYyNH0._A2BBrgn4BDOWfmykHiveXCiU4OyvqCdM0sZF4T8N1PWydmYEwr08yD1rEBEaNwxcSkRZj88VPzeIIUB8O_9EQ",
+    "file": "026_na.edge.optable.co_identify_osdk_web-v0.45.0_sid_oNu8d9Cb1IlRbosLS5zLVg_t_freestar-auth_o_fantrax-com_cookies_no_passport_eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY6MTR0S1VZV.json"
+  },
+  {
+    "i": 27,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://gum.criteo.com/sid/json?origin=prebid&topUrl=https%3A%2F%2Fwww.fantrax.com%2F&domain=www.fantrax.com&bundle=5mq1el8yJTJCZVBUZVI1NlhvTmNxcEJqSGV4JTJGWjd3RlZqMDdvVGFNQnl0WFglMkJ5WVd2N3BmTXNmJTJGdGlwSXBkYVcxSXc2MEFwUGdJYXBRcmdUQmhTbU5mRTlpVEl5YURNY3puUlN1eFNTWjl2T2N3bllRdmM1c3pxS1NYOGp4ajlFU1lEMHMlMkJiMFltZFFidzdNdTVhcDhpaUxIeE13JTNEJTNE&cw=1&lsw=1",
+    "file": "027_gum.criteo.com_sid_json_origin_prebid_topUrl_https_3A_2F_2Fwww.fantrax.com_2F_domain_www.fantrax.com_bundle_5mq1el8yJTJCZVBUZVI1NlhvTmNxcEJqSGV4JTJGWjd3RlZqMDdvVGFNQnl0WFglMkJ5WVd2.json"
+  },
+  {
+    "i": 28,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://cdn.jsdelivr.net/gh/prebid/currency-file@1/latest.json?date=20260220",
+    "file": "028_cdn.jsdelivr.net_gh_prebid_currency-file_1_latest.json_date_20260220.json"
+  },
+  {
+    "i": 29,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://id5-sync.com/g/v2/212.json",
+    "file": "029_id5-sync.com_g_v2_212.json.json"
+  },
+  {
+    "i": 30,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://ib.adnxs.com/ut/v3/prebid",
+    "file": "030_ib.adnxs.com_ut_v3_prebid.json"
+  },
+  {
+    "i": 31,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://htlb.casalemedia.com/openrtb/pbjs?s=676941",
+    "file": "031_htlb.casalemedia.com_openrtb_pbjs_s_676941.json"
+  },
+  {
+    "i": 32,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://api.id5-sync.com/analytics/882/id5-api-js",
+    "file": "032_api.id5-sync.com_analytics_882_id5-api-js.json"
+  },
+  {
+    "i": 33,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://rp.liadm.com/j?dtstmp=1771643624797&did=did-0047&se=eyJlbWFpbEhhc2giOiJkNTM4YjcyOGQzZGY0ZjQzNTQxZGJkYzg5MTY4NWVkNTY0MmRkYWJlIn0&duid=8785ae2a2eab--01khz2x4awzdq3shpcjjpd7zs2&tv=10.22.0&pu=https%3A%2F%2Fwww.fantrax.com%2Ffantasy%2Fleague%2F71wm5vfrmg5kp4my%2Fteam%2Fchart&e=d538b728d3df4f43541dbdc891685ed5642ddabe&wpn=prebid&cd=.fantrax.com",
+    "file": "033_rp.liadm.com_j_dtstmp_1771643624797_did_did-0047_se_eyJlbWFpbEhhc2giOiJkNTM4YjcyOGQzZGY0ZjQzNTQxZGJkYzg5MTY4NWVkNTY0MmRkYWJlIn0_duid_8785ae2a2eab--01khz2x4awzdq3shpcjjpd7zs2_tv_10..json"
+  },
+  {
+    "i": 34,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://btloader.com/websiteconfig?bt_env=prod&o=5714937848528896&w=fantrax.com",
+    "file": "034_btloader.com_websiteconfig_bt_env_prod_o_5714937848528896_w_fantrax.com.json"
+  },
+  {
+    "i": 35,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://pb-ing.ccgateway.net/v1.0/parent/4d97a662ad/engagement/trigger/page_load",
+    "file": "035_pb-ing.ccgateway.net_v1.0_parent_4d97a662ad_engagement_trigger_page_load.json"
+  },
+  {
+    "i": 36,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://fastlane.rubiconproject.com/a/api/fastlane.json?account_id=16924&site_id=500600&zone_id=2983354&size_id=15%3B2%3B15&alt_size_ids=9%2C8%2C10%2C19%2C44%3B1%2C19%2C43%2C44%2C117%3B2%2C1%2C19%2C43%2C44%2C117&rp_schain=1.0,1!freestar.com,1203,1,,,&eid_yahoo.com=ReeNrI8LJGfy6F3gttPz2Nlz66FQSDlbeA1Eqp3F286HRxd_4lBQws48j-pvS2549RDuWJ4wl55QGT-MZOw7yw%5E3%5E%5Eoptable.co%5Efreestar.com%5E3%5E&eid_criteo.com=FUHlO19pSXRFUHVwdnczMm1vUWNuYjB2bjVXTjBHdzJDNzJZamJJTXJHbVRtNjYlMkZTcjZkdTREQ1ltMkw3clNsY3AxOFVYJTJCRFhVa1FSM0owQzFLaTNicDhCdnNvTjIlMkIxZDhnZ0o4SHBrTiUyRkFxd1prJTNE%5E1%5E%5E%5E%5E%5E&eid_neustar.biz=E1%3AlMONwuL4v6iMNq8xz5I9xoclgQjhvkKAZFAjRHhaBvl-ggai1dD8Roa85ibGa-PCVIuNPLz2qWbKx0d3KtCezICrKjzIFwOJP2x-1TtxTki7rHiaRd5kuDH1UQCpx-X3es7OP1NtFKBlJPM3Xumy0fTOl5nHDhQlSpfgnouYUCp6scc3lqjEMUrmONURdZNJ%5E1%5E%5E%5E%5E%5EfabrickId&eid_audigent.com=060ixf7jsgld5999b9c999a9c9c989e9d66uoo2weq0ky666g6i666e6i6i646m6k%5E1%5E%5E%5E%5E%5E&eid_id5-sync.com=ID5*aJJiDduimrxIXbVzCNlMFZp6nQR4tbtdZndKJ9KaIgL__2mZInVaAAEBCmmYxS4AihKlbHR9_H4CJ7G8UDzhlA%5E1%5E%5E%5E%5E%5E&eid_liveintent.com=25-xGugMLdkwJAXPCc0HWbjlxzObHUNx%2BJjpYS0vkk7bR%2F7GBIyPloQFFA%2BJbdxmignAL3BTLZ%2F5ghMi25A5aaqfC60zu%2BKu3Ne%2F6nL%2BBlVURXcOQ%3D%3D%5E3%5E%5E%5E%5E%5E&eid_bidswitch.net=633e09e5-0005-47c0-afa2-1ff9d6713f1b%5E3%5E%5E%5E%5E%5E&eid_liveintent.triplelift.com=3540468084250086024640%5E3%5E%5E%5E%5E%5E&eid_media.net=4132294635487821000V10%5E3%5E%5E%5E%5E%5E&eid_rubiconproject.com=MKTDY0Y5-1D-GUUT%5E3%5E%5E%5E%5E%5E&eid_liveintent.indexexchange.com=Zb8nM9YpXw9akbP.IbFOFgAA%264169%5E3%5E%5E%5E%5E%5E&eid_openx.net=99dc9316-3e72-41a3-b734-8215184b14e6%5E3%5E%5E%5E%5E%5E&eid_pubmatic.com=7DFE8ACD-8DBA-4D36-A4E5-DA6657A98265%5E3%5E%5E%5E%5E%5E&eid_liveintent.sovrn.com=LfcfABZHf1qAoi8HQkWSE67m%5E3%5E%5E%5E%5E%5E&eid_sharethrough.com=78297fc2-7fa5-4ee8-820b-ed75ae9937a5%5E3%5E%5E%5E%5E%5E&eid_liveintent.sonobi.com=61d05da5-f764-431b-820d-cb67de3e6512%5E3%5E%5E%5E%5E%5E&eid_liveintent.unrulymedia.com=RX-1b086819-a867-4b27-8bde-d83c8fe4af62-004%5E3%5E%5E%5E%5E%5E&eid_criteo-hemapi.com=JiIGGF8lMkZhUlU4aGhhSTA3cll4S3dkSE5yc2pkQXRtU2lSYzF4a0RkRDZBbyUyRmJuNkNqUiUyRk1vYW90ancwcUtxNFg2V25JVVhWTCUyRmVpekZqMWRldE8lMkJ3JTJGVGVoUEJqaXFsT0xLRHp5aFd4QXVzJTJCcTFnJTNE%5E3%5E%5Eoptable.co%5Efreestar.com%5E3%5E&eid_uidapi.com=A4AAACp5wxf4GZmvcKzzlTD-VlTDJIRAoZcloefXDhKCp7_jFaitx_aoeL4kdYtGU1OM6RSRge_5wUJEjQDXun1vZJ_ZUMopuZWY8NFPTaVerd90xPTS1554gd9mG_MwXiNl2I6G0asXYGMzOsDlyT4IMuLAhQifK4bxrHN49sCQ6L-KlndelU2XTjDKt7aPu2cDYAlXZ6H_4i6IGnEVmkW5-A%5E3%5E%5Eoptable.co%5Efreestar.com%5E3%5EUID2&eid_pubcid.org=8266521e-1518-4f9a-94e3-a325744f04c8%5E1%5E%5E%5E%5E%5E&eid_adserver.org=9da8e10c-389f-4905-be8a-734300fa19b4%5E1%5E%5Eadserver.org%5Eadserver.org%5E4%5ETDID&rf=https%3A%2F%2Fwww.fantrax.com%2Ffantasy%2Fleague%2F71wm5vfrmg5kp4my%2Fteam%2Fchart&tg_v.id=8aee9e17-1223-4d9f-87d3-c54cf7074ae3&tg_i.domain=fantrax.com&tg_i.page=https%3A%2F%2Fwww.fantrax.com%2Ffantasy%2Fleague%2F71wm5vfrmg5kp4my%2Fteam%2Fchart&tg_i.name=fantrax-com&tg_i.cat=IAB17&tg_i.sectioncat=IAB17&tg_i.pagecat=IAB17&tg_i.mobile=0&tg_i.fs_optimized=false&tg_i.fs_site=3129&tg_i.documentLang=en&tg_i.fs_ad_product=display&tg_i.fs_ad_optimization=superflex%3B%3Bsuperflex&tg_i.dfp_ad_unit_code=%2F15184186%2Ffantrax_desktop_med_rect_atf%3B%2F15184186%2Ffantrax_desktop_leaderboard_atf%3B%2F15184186%2Ffantrax_desktop_leaderboard_btf&tk_flint=pbjs_lite_v10.22.0&x_source.tid=u2cd70bdb-149f-43fd-93ed-d27ea0ab6d36&l_pb_bid_id=684d96b8-e22b-4812-a89d-fdaaf88800bf%3B37fbfd7c-667f-402e-9736-6ee3ed3006a6%3B021252e7-8c76-4a58-89fa-e2d904d2aefa&p_screen_res=1400x900&rp_secure=1&x_imp.ext.tid=udba98b48-bd49-4021-a5a6-8598fa8dd545%3Bu897fd7a2-e057-426e-b531-4fc7d661e892%3Bu86539be0-8b72-4f30-baf8-a9969adec483&p_site.mobile=0&p_gpid=%2F15184186%2Ffantrax_desktop_med_rect_atf%3B%2F15184186%2Ffantrax_desktop_leaderboard_atf%3B%2F15184186%2Ffantrax_desktop_leaderboard_btf&m_ch_ua=%22Not%3AA-Brand%22%7Cv%3D%2299%22%2C%22HeadlessChrome%22%7Cv%3D%22145%22%2C%22Chromium%22%7Cv%3D%22145%22&m_ch_mobile=%3F0&m_ch_platform=macOS&slots=3&rand=0.8935981364451936",
+    "file": "036_fastlane.rubiconproject.com_a_api_fastlane.json_account_id_16924_site_id_500600_zone_id_2983354_size_id_15_3B2_3B15_alt_size_ids_9_2C8_2C10_2C19_2C44_3B1_2C19_2C43_2C44_2C117_3B2_2.json"
+  },
+  {
+    "i": 37,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://s2s.t13.io/cookie_sync",
+    "file": "037_s2s.t13.io_cookie_sync.json"
+  },
+  {
+    "i": 38,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://tlx.3lift.com/header/auction?lib=prebid&v=10.22.0&referrer=https%3A%2F%2Fwww.fantrax.com%2Ffantasy%2Fleague%2F71wm5vfrmg5kp4my%2Fteam%2Fchart&tmax=2500",
+    "file": "038_tlx.3lift.com_header_auction_lib_prebid_v_10.22.0_referrer_https_3A_2F_2Fwww.fantrax.com_2Ffantasy_2Fleague_2F71wm5vfrmg5kp4my_2Fteam_2Fchart_tmax_2500.json"
+  },
+  {
+    "i": 39,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://tk.amazon-adsystem.com/envelope",
+    "file": "039_tk.amazon-adsystem.com_envelope.json"
+  },
+  {
+    "i": 40,
+    "status": 204,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://ex.ingage.tech/v1/openrtb",
+    "file": "040_ex.ingage.tech_v1_openrtb.json"
+  },
+  {
+    "i": 41,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://ads.trustx.org/pbhb",
+    "file": "041_ads.trustx.org_pbhb.json"
+  },
+  {
+    "i": 42,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://s2s.t13.io/openrtb2/auction",
+    "file": "042_s2s.t13.io_openrtb2_auction.json"
+  },
+  {
+    "i": 43,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://id5-sync.com/g/v2/882.json",
+    "file": "043_id5-sync.com_g_v2_882.json.json"
+  },
+  {
+    "i": 44,
+    "status": 200,
+    "contentType": "application/json; charset=utf8",
+    "url": "https://id.hadron.ad.gt/v1/hadron.json?_it=freestar&partner_id=474&sync=0&domain=www.fantrax.com&url=https://www.fantrax.com/fantasy/league/71wm5vfrmg5kp4my/team/chart&v=06",
+    "file": "044_id.hadron.ad.gt_v1_hadron.json__it_freestar_partner_id_474_sync_0_domain_www.fantrax.com_url_https_www.fantrax.com_fantasy_league_71wm5vfrmg5kp4my_team_chart_v_06.json"
+  },
+  {
+    "i": 45,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://optimise.net/?k=1&d=fantrax.com&t=desktop&c=US&r=20",
+    "file": "045_optimise.net_k_1_d_fantrax.com_t_desktop_c_US_r_20.json"
+  },
+  {
+    "i": 46,
+    "status": 200,
+    "contentType": "application/json; charset=utf-8",
+    "url": "https://pb-ing.ccgateway.net/v1.0/parent/4d97a662ad/engagement/trigger/auction_end",
+    "file": "046_pb-ing.ccgateway.net_v1.0_parent_4d97a662ad_engagement_trigger_auction_end.json"
+  },
+  {
+    "i": 47,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://ut.pubmatic.com/geo?pubid=156696",
+    "file": "047_ut.pubmatic.com_geo_pubid_156696.json"
+  },
+  {
+    "i": 48,
+    "status": 200,
+    "contentType": "application/json",
+    "url": "https://api.floors.dev/sgw/v1/floors?d=fantrax.com&t=desktop&k=1&r=1&c=US",
+    "file": "048_api.floors.dev_sgw_v1_floors_d_fantrax.com_t_desktop_k_1_r_1_c_US.json"
+  }
+]

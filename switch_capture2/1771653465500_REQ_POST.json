@@ -1,0 +1,15 @@
+{
+  "ts": 1771653465500,
+  "method": "POST",
+  "url": "https://www.fantrax.com/fxpa/req?leagueId=71wm5vfrmg5kp4my",
+  "headers": {
+    "sec-ch-ua-platform": "\"macOS\"",
+    "referer": "https://www.fantrax.com/fantasy/league/71wm5vfrmg5kp4my/team/roster",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua": "\"Chromium\";v=\"145\", \"Not:A-Brand\";v=\"99\"",
+    "content-type": "text/plain",
+    "sec-ch-ua-mobile": "?0"
+  },
+  "postData": "{\"uiv\":3,\"refUrl\":\"\",\"dt\":0,\"at\":0,\"av\":\"0.0\",\"tz\":\"America/Chicago\",\"v\":\"179.0.1\",\"msgs\":[{\"method\":\"login\",\"data\":{}},{\"method\":\"getRefObject\",\"data\":{\"type\":\"Sport\"}},{\"method\":\"getSportsByJoinImportance\",\"data\":{}},{\"method\":\"getSportsByPlayImportance\",\"data\":{}},{\"method\":\"getRefObject\",\"data\":{\"type\":\"PlayerIconType\"}},{\"method\":\"getRefObject\",\"data\":{\"type\":\"CollegeYear\"}},{\"method\":\"getMenu\",\"data\":{\"type\":\"MAIN_SPORT_NEWS\"}},{\"method\":\"getGameLobbies\",\"data\":{}},{\"method\":\"getRefObject\",\"data\":{\"type\":\"FantasyMenu\"}}]}"
+}

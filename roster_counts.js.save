@@ -1,0 +1,129 @@
+Xrequire("dotenv").config();
+const fs = require("fs");
+const path = require("path");
+const { chromium } = require("playwright");
+
+function findLatestLeagueBootstrap(leagueId) {
+  // Prefer captures_team2 / captures_team / captures / whichever exists
+  const candidates = [
+    path.join(__dirname, "captures_team2"),
+    path.join(__dirname, "captures_team"),
+    path.join(__dirname, "captures"),
+  ];
+
+  for (const dir of candidates) {
+    if (!fs.existsSync(dir)) continue;
+    const files = fs.readdirSync(dir).filter(f => f.includes("fxpa_req_leagueId_" + leagueId) && f.endsWith(".json"));
+    if (files.length) return path.join(dir, files.sort().slice(-1)[0]);
+  }
+  throw new Error("Could not find league bootstrap JSON in captures*/ for leagueId=" + leagueId);
+}
+
+function parseTeamsFromBootstrap(jsonPath) {
+  const d = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+  const teams = d?.responses?.[0]?.data?.leagues?.[0]?.leaguesTeams;
+  if (!Array.isArray(teams) || !teams.length) throw new Error("Bootstrap missing leaguesTeams");
+  return teams.map(t => ({ teamId: t.teamId, teamName: t.team }));
+}
+
+async function scrapeMinorsCount(page) {
+  // Force lazy components to render
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await page.waitForTimeout(800);
+
+  // Sometimes needs a second scroll after data loads
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await page.waitForTimeout(800);
+
+  // Look for the Status Summary area first (more stable than plain text)
+  // Fantrax is Angular-ish; we’ll just regex-search the full page text as a backstop.
+  const bodyText = await page.locator("body").innerText({ timeout: 60000 });
+
+  // Match "Minors: 207/229" with flexible whitespace
+  const m = bodyText.match(/Minors:\s*(\d+)\s*\/\s*(\d+)/i);
+  if (!m) return null;
+
+  return { rostered: parseInt(m[1], 10), cap: parseInt(m[2], 10) };
+}
+
+async function main() {
+  const leagueId = process.env.LEAGUE_ID;
+  if (!leagueId) throw new Error("Missing LEAGUE_ID in .env");
+
+  const authPath = path.join(__dirname, "auth.json");
+  if (!fs.existsSync(authPath)) throw new Error("auth.json missing");
+
+  const bootstrapPath = findLatestLeagueBootstrap(leagueId);
+  const teams = parseTeamsFromBootstrap(bootstrapPath);
+
+  const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext({
+    storageState: authPath,
+    viewport: { width: 1400, height: 900 },
+  });
+  const page = await context.newPage();
+  page.setDefaultNavigationTimeout(120000);
+
+  const results = [];
+  const failures = [];
+
+  for (const t of teams) {
+    const url = `https://www.fantrax.com/fantasy/league/${leagueId}/team/${t.teamId}/roster`;
+    console.log("Checking:", t.teamName, "-", t.teamId);
+
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+
+    // Give the SPA time to mount + fetch
+    await page.waitForTimeout(5000);
+
+    // Wait for something that indicates the roster table rendered.
+    // The roster page shows tabs/headers; we’ll wait for any occurrence of "Status Summary" OR the roster categories.
+    await Promise.race([
+      page.waitForSelector('text=/Status Summary/i', { timeout: 45000 }).catch(() => null),
+      page.waitForSelector('text=/Active:/i', { timeout: 45000 }).catch(() => null),
+      page.waitForSelector('text=/Pitching/i', { timeout: 45000 }).catch(() => null),
+    ]);
+
+    const minors = await scrapeMinorsCount(page);
+
+    if (!minors) {
+      failures.push({ teamId: t.teamId, teamName: t.teamName, url });
+      console.log("  ❌ Could not find Minors: X/229 on page");
+      continue;
+    }
+
+    const openSlots = minors.cap - minors.rostered;
+
+    results.push({
+      teamId: t.teamId,
+      teamName: t.teamName,
+      minorsRostered: minors.rostered,
+      minorsCap: minors.cap,
+      openSlots,
+    });
+
+    console.log(`  ✅ Minors: ${minors.rostered}/${minors.cap} (open ${openSlots})`);
+  }
+
+  await browser.close();
+
+  fs.writeFileSync("roster_counts.json", JSON.stringify({ results, failures }, null, 2));
+  console.log("\nWrote roster_counts.json");
+
+  // Pretty print
+  console.table(results.map(r => ({
+    team: r.teamName,
+    minors: `${r.minorsRostered}/${r.minorsCap}`,
+    openSlots: r.openSlots
+  })));
+
+  if (failures.length) {
+    console.log("\nFailures:");
+    failures.forEach(f => console.log("-", f.teamName, f.url));
+  }
+}
+
+main().catch(e => {
+  console.error(e);
+  process.exit(1);
+});

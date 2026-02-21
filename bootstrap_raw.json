@@ -1,0 +1,8 @@
+{
+  "pageError": {
+    "onScreen": false,
+    "code": "ERROR_INVALID_REQUEST",
+    "text": "Missing 'msgs' key.",
+    "forceReload": false
+  }
+}

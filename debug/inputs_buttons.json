@@ -1,0 +1,112 @@
+[
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": "0"
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": ""
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": "trophySeason-Long navigate_next"
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": "lock"
+  },
+  {
+    "tag": "INPUT",
+    "type": null,
+    "name": null,
+    "id": "mat-input-0",
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": ""
+  },
+  {
+    "tag": "INPUT",
+    "type": "password",
+    "name": null,
+    "id": "mat-input-1",
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": "current-password",
+    "text": ""
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": "visibility"
+  },
+  {
+    "tag": "BUTTON",
+    "type": "submit",
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": "login Login"
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": "Read more"
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": "Terms"
+  },
+  {
+    "tag": "BUTTON",
+    "type": null,
+    "name": null,
+    "id": null,
+    "aria": null,
+    "placeholder": null,
+    "autocomplete": null,
+    "text": "Dismiss"
+  }
+]

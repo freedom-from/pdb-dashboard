@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-02-21T09:42:26.268Z",
+  "sheet": {
+    "spreadsheetId": "1bSK7vRbCXBJbzyG1mk6OEED8fMZQtyrS",
+    "gid": "1555158191",
+    "rows": "14-25",
+    "columnsUsed": {
+      "owner": "A",
+      "requiredRosterSpots": "I"
+    },
+    "join": "Owner(A) -> Team(mapping) -> Fantrax(openSlots)"
+  },
+  "report": [
+    {
+      "owner": "Erik Dahl",
+      "team": "derek summers",
+      "requiredRosterSpots": 23,
+      "minorsOpenSlots": 1,
+      "open_minus_required": -22
+    },
+    {
+      "owner": "Wes Schurter",
+      "team": "gay cowboy rapper",
+      "requiredRosterSpots": 22,
+      "minorsOpenSlots": 3,
+      "open_minus_required": -19
+    },
+    {
+      "owner": "Jacob Vass",
+      "team": "bombo balboni",
+      "requiredRosterSpots": 20,
+      "minorsOpenSlots": 2,
+      "open_minus_required": -18
+    },
+    {
+      "owner": "Kyle Eidsness",
+      "team": "Lord Blueberry",
+      "requiredRosterSpots": 19,
+      "minorsOpenSlots": 2,
+      "open_minus_required": -17
+    },
+    {
+      "owner": "Ryan Pittman",
+      "team": "zack & miri",
+      "requiredRosterSpots": 18,
+      "minorsOpenSlots": 16,
+      "open_minus_required": -2
+    },
+    {
+      "owner": "Matthew St-Germain",
+      "team": "Le Machine a laver",
+      "requiredRosterSpots": 22,
+      "minorsOpenSlots": 22,
+      "open_minus_required": 0
+    },
+    {
+      "owner": "Matthew Gille",
+      "team": "phoebe cates",
+      "requiredRosterSpots": 17,
+      "minorsOpenSlots": 18,
+      "open_minus_required": 1
+    },
+    {
+      "owner": "Hank Hormann",
+      "team": "The blacockos",
+      "requiredRosterSpots": 20,
+      "minorsOpenSlots": 22,
+      "open_minus_required": 2
+    },
+    {
+      "owner": "Jesse Hoffman",
+      "team": "swayzaurs",
+      "requiredRosterSpots": 20,
+      "minorsOpenSlots": 22,
+      "open_minus_required": 2
+    },
+    {
+      "owner": "Andy Larson",
+      "team": "swedish energy",
+      "requiredRosterSpots": 18,
+      "minorsOpenSlots": 21,
+      "open_minus_required": 3
+    },
+    {
+      "owner": "Clover Goetze",
+      "team": "Meme au lait",
+      "requiredRosterSpots": 20,
+      "minorsOpenSlots": 27,
+      "open_minus_required": 7
+    },
+    {
+      "owner": "Patrick Jackson",
+      "team": "default",
+      "requiredRosterSpots": 21,
+      "minorsOpenSlots": 34,
+      "open_minus_required": 13
+    }
+  ],
+  "failures": []
+}
