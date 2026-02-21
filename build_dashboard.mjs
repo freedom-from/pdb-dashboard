@@ -1,129 +1,172 @@
 import fs from "node:fs";
+import path from "node:path";
 
-const LEAGUE_NAME = "L'Petites Amies";
+const LEAGUE_NAME = "L'Petites Amies"; // <-- FIX #1: correct league title
 
-function mustReadJson(fp) {
-  const txt = fs.readFileSync(fp, "utf8");
-  return JSON.parse(txt);
-}
-function escHtml(s) {
+function norm(s) {
   return String(s ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-function norm(s) { return String(s ?? "").trim().toLowerCase(); }
-function formatSigned(n) {
-  const x = Number(n);
-  if (!Number.isFinite(x)) return "";
-  return x > 0 ? `+${x}` : `${x}`;
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
 }
 
-const roster = mustReadJson("roster_counts.json");
-const picks = mustReadJson("picks_2026_milb_report.json");
+function readJson(fp) {
+  return JSON.parse(fs.readFileSync(fp, "utf8"));
+}
 
-const rosterResults = Array.isArray(roster?.results) ? roster.results : [];
-const pickReport = Array.isArray(picks?.report) ? picks.report : [];
+function safeNum(x) {
+  const n = Number(x);
+  return Number.isFinite(n) ? n : null;
+}
 
-const rosterByTeam = new Map();
-for (const r of rosterResults) rosterByTeam.set(norm(r.teamName), r);
+function build() {
+  const roster = readJson("roster_counts.json");
+  const picks = readJson("picks_2026_milb_report.json");
 
-const rows = [];
-const failures = [];
+  const rosterRows = Array.isArray(roster?.results) ? roster.results : [];
+  const pickRows = Array.isArray(picks?.report) ? picks.report : [];
 
-for (const p of pickReport) {
-  const teamNameFromSheet = p.teamName ?? p.team ?? "";
-  const rosterNeed = Number(p.requiredRosterSpots ?? p.count);
+  // Build map: teamName -> required roster spots from picks report
+  // Try a few likely key names (because earlier scripts varied)
+  const picksByTeam = new Map();
+  for (const r of pickRows) {
+    const team =
+      r.teamName ?? r.team ?? r.team_name ?? r.teamNameFromSheet ?? r.team_from_sheet ?? null;
 
-  const rr = rosterByTeam.get(norm(teamNameFromSheet));
-  if (!rr) {
-    failures.push({ owner: p.owner ?? "", teamNameFromSheet, reason: "Team name mismatch" });
-    continue;
+    const required =
+      r.requiredRosterSpots ?? r.requiredSpots ?? r.picksRequired ?? r.count ?? r.required ?? null;
+
+    if (team != null) {
+      picksByTeam.set(norm(team), safeNum(required));
+    }
   }
 
-  const openSlots = Number(rr.openSlots);
-  const slotsMinusPicks =
-    Number.isFinite(openSlots) && Number.isFinite(rosterNeed) ? openSlots - rosterNeed : null;
+  const rows = rosterRows.map((t) => {
+    const teamName = t.teamName;
+    const openSlots = safeNum(t.openSlots);
 
-  // FIX #2: 0 is GOOD (✅). Only negative is bad.
-  const status = slotsMinusPicks === null ? "unknown" : (slotsMinusPicks < 0 ? "bad" : "good");
+    const requiredSpots = picksByTeam.get(norm(teamName));
+    const delta =
+      openSlots != null && requiredSpots != null ? openSlots - requiredSpots : null;
 
-  rows.push({
-    owner: p.owner ?? "",
-    teamName: rr.teamName,
-    teamId: rr.teamId,
-    url: rr.url,
-    minors: `${rr.minorsRostered}/${rr.minorsCap}`,
-    openSlots: rr.openSlots,
-    requiredRosterSpots: Number.isFinite(rosterNeed) ? rosterNeed : null,
-    slots_minus_picks: slotsMinusPicks,
-    status,
+    // FIX #2: 0 is GOOD (green check). Only negative is warning.
+    const status = delta == null ? "unknown" : delta < 0 ? "warn" : "ok";
+
+    return {
+      teamName,
+      teamId: t.teamId,
+      url: t.url,
+      minorsRostered: t.minorsRostered,
+      minorsCap: t.minorsCap,
+      openSlots,
+      requiredSpots,
+      delta,
+      status,
+    };
   });
-}
 
-rows.sort((a, b) => {
-  const aa = Number.isFinite(a.slots_minus_picks) ? a.slots_minus_picks : 999999;
-  const bb = Number.isFinite(b.slots_minus_picks) ? b.slots_minus_picks : 999999;
-  return aa - bb;
-});
+  // Sort “most in trouble” first (most negative delta)
+  rows.sort((a, b) => {
+    const aa = a.delta == null ? 999999 : a.delta;
+    const bb = b.delta == null ? 999999 : b.delta;
+    return aa - bb;
+  });
 
-const payload = { leagueName: LEAGUE_NAME, generatedAt: new Date().toISOString(), rows, failures };
+  const outDir = path.join("public");
+  fs.mkdirSync(outDir, { recursive: true });
 
-fs.mkdirSync("public", { recursive: true });
-fs.writeFileSync("public/data.json", JSON.stringify(payload, null, 2));
+  const generatedAt = new Date().toISOString();
 
-const html = `<!doctype html>
+  const data = {
+    leagueName: LEAGUE_NAME,
+    generatedAt,
+    rows,
+  };
+
+  fs.writeFileSync(path.join(outDir, "data.json"), JSON.stringify(data, null, 2));
+
+  const html = `<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>${escHtml(LEAGUE_NAME)} – Draft Slot Tally</title>
-<style>
-:root{color-scheme:dark}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b0f14;color:#e8eef6}
-.wrap{max-width:1100px;margin:0 auto;padding:22px 18px 40px}
-h1{margin:0 0 6px;font-size:22px;font-weight:700}
-.meta{opacity:.75;font-size:13px;margin-bottom:16px}
-table{width:100%;border-collapse:collapse;background:#0f1620;border:1px solid #1b2a3a;border-radius:12px;overflow:hidden}
-th,td{padding:10px;border-bottom:1px solid #182636;text-align:left;font-size:14px}
-th{font-size:12px;text-transform:uppercase;opacity:.8;background:#0c131c}
-tr:last-child td{border-bottom:0}
-a{color:#9fd3ff;text-decoration:none} a:hover{text-decoration:underline}
-.good{color:#7CFC9A}.bad{color:#ff7b7b}.unknown{color:#ffd479}
-.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${LEAGUE_NAME} — Draft/Roster Tally</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    h1 { margin: 0 0 6px; }
+    .meta { color: #666; margin: 0 0 18px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid #eee; padding: 10px 8px; text-align: left; vertical-align: top; }
+    th { font-size: 12px; color: #444; text-transform: uppercase; letter-spacing: .04em; }
+    .mono { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; }
+    .ok { background: #e7f7ec; color: #116329; }
+    .warn { background: #fff6db; color: #7a5a00; }
+    .unknown { background: #eee; color: #333; }
+    a { color: inherit; }
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>${escHtml(LEAGUE_NAME)}</h1>
-  <div class="meta">Auto-updated • Generated: <span class="mono">${escHtml(payload.generatedAt)}</span></div>
+  <h1>${LEAGUE_NAME}</h1>
+  <p class="meta">Auto-updated. Data timestamp: <span id="ts" class="mono"></span></p>
+
   <table>
     <thead>
       <tr>
-        <th>Status</th><th>Team</th><th>Owner</th><th>Minors</th>
-        <th class="mono">Open</th><th class="mono">Req</th><th class="mono">Open−Req</th>
+        <th>Status</th>
+        <th>Team</th>
+        <th>Minors</th>
+        <th>Open Slots</th>
+        <th>Required Spots</th>
+        <th>Delta (Open − Required)</th>
       </tr>
     </thead>
-    <tbody>
-    ${rows.map(r=>{
-      const icon = r.status==="bad" ? "⚠️" : (r.status==="good" ? "✅" : "❔");
-      return `<tr>
-        <td class="${r.status}">${icon}</td>
-        <td><a href="${escHtml(r.url)}" target="_blank" rel="noreferrer">${escHtml(r.teamName)}</a></td>
-        <td>${escHtml(r.owner)}</td>
-        <td class="mono">${escHtml(r.minors)}</td>
-        <td class="mono">${escHtml(r.openSlots)}</td>
-        <td class="mono">${r.requiredRosterSpots ?? ""}</td>
-        <td class="mono">${r.slots_minus_picks===null ? "" : escHtml(formatSigned(r.slots_minus_picks))}</td>
-      </tr>`;
-    }).join("")}
-    </tbody>
+    <tbody id="tbody"></tbody>
   </table>
-</div>
+
+<script>
+(async function () {
+  const res = await fetch('./data.json', { cache: 'no-store' });
+  const data = await res.json();
+  document.getElementById('ts').textContent = data.generatedAt;
+
+  const tbody = document.getElementById('tbody');
+
+  function badge(status, delta) {
+    if (status === 'ok') return '<span class="tag ok">✅ OK</span>';       // 0 is OK
+    if (status === 'warn') return '<span class="tag warn">⚠️ Tight</span>'; // only negative deltas
+    return '<span class="tag unknown">?</span>';
+  }
+
+  for (const r of data.rows) {
+    const tr = document.createElement('tr');
+
+    const minors = (r.minorsRostered != null && r.minorsCap != null)
+      ? (r.minorsRostered + '/' + r.minorsCap)
+      : '';
+
+    const open = (r.openSlots == null) ? '' : String(r.openSlots);
+    const req  = (r.requiredSpots == null) ? '' : String(r.requiredSpots);
+    const del  = (r.delta == null) ? '' : String(r.delta);
+
+    tr.innerHTML = \`
+      <td>\${badge(r.status, r.delta)}</td>
+      <td><a href="\${r.url}" target="_blank" rel="noreferrer">\${r.teamName}</a></td>
+      <td class="mono">\${minors}</td>
+      <td class="mono">\${open}</td>
+      <td class="mono">\${req}</td>
+      <td class="mono">\${del}</td>
+    \`;
+
+    tbody.appendChild(tr);
+  }
+})();
+</script>
 </body>
 </html>`;
-fs.writeFileSync("public/index.html", html);
 
-console.log("Wrote public/index.html + public/data.json");
+  fs.writeFileSync(path.join(outDir, "index.html"), html);
+  console.log("Built public/index.html and public/data.json");
+}
+
+build();
