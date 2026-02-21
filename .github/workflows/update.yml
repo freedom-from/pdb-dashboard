@@ -28,7 +28,7 @@ jobs:
           echo "${{ secrets.FANTRAX_AUTH_JSON }}" > auth.json
 
       - name: Run Fantrax counts
-        run: node roster_counts.js
+        run: node roster_counts.cjs
 
       - name: Run pick requirements join
         run: node picks_2026_milb.mjs
