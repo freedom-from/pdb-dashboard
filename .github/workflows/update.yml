@@ -27,6 +27,12 @@ jobs:
         run: |
           echo "${{ secrets.FANTRAX_AUTH_JSON }}" > auth.json
 
+      - name: Recreate auth.json from gzipped secret
+        shell: bash
+        run: |
+          echo "${{ secrets.AUTH_JSON_GZ_B64 }}" | base64 --decode | gunzip > auth.json
+          node -e "console.log('auth.json bytes:', require('fs').statSync('auth.json').size)"
+
       - name: Run Fantrax counts
         run: node roster_counts.cjs
 
